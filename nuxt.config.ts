@@ -1,4 +1,5 @@
 import type { Nitro, NitroConfig } from "nitropack";
+import { iconifyClientBundleIcons } from "./app/constants/iconify-client-bundle";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
@@ -54,7 +55,21 @@ export default defineNuxtConfig({
         "",
     },
   },
-  modules: ["@nuxt/image", "@nuxt/eslint"],
+  modules: ["@nuxt/image", "@nuxt/icon", "@nuxt/eslint"],
+  // Iconify / Nuxt Icon: see README "Icons" and `app/constants/iconify-client-bundle.ts`.
+  icon: {
+    // Registered globally as `NuxtIcon` so it does not clash with a generic `Icon` name.
+    componentName: "NuxtIcon",
+    clientBundle: {
+      icons: [...iconifyClientBundleIcons],
+      scan: true,
+    },
+    // When you use Iconify icons, install `@iconify-json/<collection>` and add the
+    // collection id here (e.g. `ph` for Phosphor). Empty until you add `iconify` sources.
+    serverBundle: {
+      collections: [],
+    },
+  },
   app: {
     head: {
       title: "Placeholder Title",

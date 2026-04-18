@@ -2,10 +2,10 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 
 // Icons are registered as `IconDefinition` objects in `~/constants/icons` and
-// rendered through `AppIcon.vue`, not via the global `library`.
+// rendered through `AppIcon.vue`, not via the global `library`. Adding glyphs: README **Icons**.
 
 config.autoAddCss = false;
 
 export default defineNuxtPlugin(() => {
-  /* Font Awesome CSS + config only; see AppIcon + constants/icons */
+  /* Font Awesome CSS + config only; see README **Icons** */
 });
