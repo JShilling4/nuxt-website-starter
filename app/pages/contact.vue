@@ -421,13 +421,14 @@ async function onSubmit() {
               {{ submitError }}
             </p>
 
-            <button
+            <AppButton
               type="submit"
-              class="btn btn-secondary submit-btn"
+              variant="secondary"
+              class="submit-btn"
               :disabled="submitting"
             >
               {{ submitting ? "Sending…" : "Submit" }}
-            </button>
+            </AppButton>
           </form>
         </div>
       </AppContainer>
@@ -683,11 +684,6 @@ textarea {
   @include r.up(sm) {
     width: auto;
     min-width: 12rem;
-  }
-
-  &:disabled {
-    opacity: 0.65;
-    cursor: not-allowed;
   }
 }
 </style>

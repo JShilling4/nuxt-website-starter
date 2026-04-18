@@ -12,17 +12,17 @@ const firstServicePhone = servicePhones[0]!;
         <h1 class="hero-heading">Placeholder Slogan</h1>
         <p class="hero-subtext">&ldquo;Placeholder Subtext.&rdquo;</p>
         <div class="btn-container">
-          <RouterLink to="/contact" class="btn btn-secondary raised-1">
+          <AppButton to="/contact" variant="secondary" raised>
             Request Estimate
-          </RouterLink>
-          <a :href="firstServicePhone.tel" class="btn btn-white raised-1">
+          </AppButton>
+          <AppButton :href="firstServicePhone.tel" variant="white" raised>
             <AppIcon
               name="phone"
               aria-hidden="true"
               class="hero-phone-btn__icon"
             />
             {{ firstServicePhone.display }}
-          </a>
+          </AppButton>
         </div>
       </div>
     </AppContainer>
@@ -138,7 +138,7 @@ const firstServicePhone = servicePhones[0]!;
     align-items: center;
     gap: 0.85rem;
 
-    .btn {
+    :deep(.app-button) {
       margin: 0;
       width: min(18rem, 100%);
       font-size: clamp(0.75rem, calc(0.62rem + 0.65vw), 1rem);
