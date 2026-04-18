@@ -1,0 +1,33 @@
+@use "sass:map";
+
+// Mobile-first breakpoint helpers
+$breakpoints: (
+  xs: 375px,
+  sm: 480px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+@function bp($key) {
+  @return map.get($breakpoints, $key);
+}
+
+@mixin up($key) {
+  @media (min-width: bp($key)) {
+    @content;
+  }
+}
+
+@mixin down($key) {
+  @media (max-width: (bp($key) - 0.02px)) {
+    @content;
+  }
+}
+
+@mixin between($min, $max) {
+  @media (min-width: bp($min)) and (max-width: (bp($max) - 0.02px)) {
+    @content;
+  }
+}
