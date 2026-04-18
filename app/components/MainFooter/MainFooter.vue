@@ -78,16 +78,7 @@ function socialIcon(social: SocialMediaLink): [string, string] {
       </AppContainer>
     </div>
 
-    <div class="footer-bottom">
-      <AppContainer>
-        <div class="footer-bottom-inner">
-          <p class="copyright">
-            &copy; {{ new Date().getFullYear() }} Placeholder Company. All
-            rights reserved.
-          </p>
-        </div>
-      </AppContainer>
-    </div>
+    <MainFooterBottom />
   </footer>
 </template>
 
@@ -255,24 +246,6 @@ function socialIcon(social: SocialMediaLink): [string, string] {
       opacity: 0.85;
       text-decoration: underline;
     }
-  }
-}
-
-.footer-bottom {
-  background-color: var(--secondary-bg-color);
-  color: var(--secondary-text-color);
-  padding: 1rem 0;
-
-  .footer-bottom-inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .copyright {
-    margin: 0;
-    font-size: 0.875rem;
-    opacity: 0.9;
   }
 }
 </style>
