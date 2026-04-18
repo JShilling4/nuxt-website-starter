@@ -16,8 +16,8 @@ const firstServicePhone = servicePhones[0]!;
             Request Estimate
           </RouterLink>
           <a :href="firstServicePhone.tel" class="btn btn-white raised-1">
-            <FontAwesomeIcon
-              :icon="['fas', 'phone']"
+            <AppIcon
+              name="phone"
               aria-hidden="true"
               class="hero-phone-btn__icon"
             />

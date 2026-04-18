@@ -1,14 +1,7 @@
 <script setup lang="ts">
-import type { SocialMediaLink } from "~/constants/company";
 import { companyEmail, servicePhones, socialMedia } from "~/constants/company";
+import { socialNetworkIconName } from "~/constants/icons";
 import { navItems } from "~/components/MainHeader/navItems";
-
-function socialIcon(social: SocialMediaLink): [string, string] {
-  if (social.name.toLowerCase() === "facebook") {
-    return ["fab", "facebook"];
-  }
-  return ["fas", "link"];
-}
 </script>
 
 <template>
@@ -40,7 +33,7 @@ function socialIcon(social: SocialMediaLink): [string, string] {
             <h3 class="footer-heading">Contact Us</h3>
             <ul class="contact-list">
               <li v-for="phone in servicePhones" :key="phone.tel">
-                <FontAwesomeIcon :icon="['fas', 'phone']" aria-hidden="true" />
+                <AppIcon name="phone" aria-hidden="true" />
                 <div class="contact-list__body">
                   <a :href="phone.tel">
                     <span class="contact-list__label">{{ phone.name }}: </span>
@@ -49,17 +42,14 @@ function socialIcon(social: SocialMediaLink): [string, string] {
                 </div>
               </li>
               <li>
-                <FontAwesomeIcon
-                  :icon="['fas', 'envelope']"
-                  aria-hidden="true"
-                />
+                <AppIcon name="envelope" aria-hidden="true" />
                 <div class="contact-list__body">
                   <a :href="`mailto:${companyEmail}`">{{ companyEmail }}</a>
                 </div>
               </li>
               <li v-for="social in socialMedia" :key="social.url">
-                <FontAwesomeIcon
-                  :icon="socialIcon(social)"
+                <AppIcon
+                  :name="socialNetworkIconName(social)"
                   aria-hidden="true"
                 />
                 <div class="contact-list__body">

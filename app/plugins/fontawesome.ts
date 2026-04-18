@@ -1,83 +1,11 @@
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { library, config } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-import {
-  faArrowRight,
-  faBars,
-  faBolt,
-  faCheck,
-  faCircleChevronRight,
-  faStar,
-  faCircleCheck,
-  faCommentDollar,
-  faDroplet,
-  faFilter,
-  faFlask,
-  faGaugeHigh,
-  faHammer,
-  faHandshake,
-  faLayerGroup,
-  faHouse,
-  faIndustry,
-  faLocationDot,
-  faMagnifyingGlass,
-  faPhone,
-  faEnvelope,
-  faFaucet,
-  faChevronDown,
-  faRotate,
-  faShieldHalved,
-  faLink,
-  faSliders,
-  faSolarPanel,
-  faTractor,
-  faUsers,
-  faWater,
-  faWind,
-  faWrench,
-} from "@fortawesome/free-solid-svg-icons";
+import { config } from "@fortawesome/fontawesome-svg-core";
 
-library.add(
-  faFacebook,
-  faArrowRight,
-  faBars,
-  faBolt,
-  faCheck,
-  faCircleChevronRight,
-  faStar,
-  faCircleCheck,
-  faCommentDollar,
-  faDroplet,
-  faFilter,
-  faFlask,
-  faGaugeHigh,
-  faHammer,
-  faHandshake,
-  faHouse,
-  faIndustry,
-  faLocationDot,
-  faMagnifyingGlass,
-  faPhone,
-  faEnvelope,
-  faFaucet,
-  faChevronDown,
-  faLayerGroup,
-  faRotate,
-  faShieldHalved,
-  faLink,
-  faSliders,
-  faSolarPanel,
-  faTractor,
-  faUsers,
-  faWater,
-  faWind,
-  faWrench,
-);
+// Icons are registered as `IconDefinition` objects in `~/constants/icons` and
+// rendered through `AppIcon.vue`, not via the global `library`.
 
-// This is important, we are going to let Nuxt worry about the CSS
 config.autoAddCss = false;
 
-export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.component("FontAwesomeIcon", FontAwesomeIcon);
+export default defineNuxtPlugin(() => {
+  /* Font Awesome CSS + config only; see AppIcon + constants/icons */
 });

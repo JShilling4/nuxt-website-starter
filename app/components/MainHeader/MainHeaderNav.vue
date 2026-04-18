@@ -88,8 +88,8 @@ watch(
             :aria-label="`Toggle ${item.label} submenu`"
             @click="toggleDropdown(item.id)"
           >
-            <FontAwesomeIcon
-              :icon="['fas', 'chevron-down']"
+            <AppIcon
+              name="chevronDown"
               class="navlink-submenu-toggle-icon"
               aria-hidden="true"
             />
